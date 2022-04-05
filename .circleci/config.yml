@@ -4,7 +4,7 @@ image_config: &image_config
   # either as project-specific environment variables
   # or as resources in your organization's org-global Context
 
-  IMAGE_NAME: my_image
+  IMAGE_NAME: image2
 
   IMAGE_TAG: 1.0
 
@@ -19,11 +19,11 @@ image_config: &image_config
 
   # NODE_VERSION_NUM: # pick a version from https://nodejs.org/dist
 
-  # PYTHON_VERSION_NUM: # pick a version from https://python.org/ftp/python
+  PYTHON_VERSION_NUM: 3.8
 
   JAVA: false
 
-  MYSQL_CLIENT: false
+  MYSQL_CLIENT: true
 
   POSTGRES_CLIENT: false
 
@@ -54,7 +54,7 @@ jobs:
 
   test_image:
     docker:
-      - image: $DOCKER_USERNAME/my_image:1.0
+      - image: $DOCKER_USERNAME/image2:1.0
         environment:
           <<: *image_config
 
